@@ -9,7 +9,12 @@ const Dropdown = () => {
   };
 
   return (
-    <RSDropdown isOpen={dropdownOpen} toggle={dropdownToggleHandler} direction={dropdownOpen ? 'up' : 'down'}>
+    <RSDropdown
+      isOpen={dropdownOpen}
+      toggle={dropdownToggleHandler}
+      direction={dropdownOpen ? 'up' : 'down'}
+      className="ms-5"
+    >
       <DropdownToggle caret>Widok</DropdownToggle>
       <DropdownMenu>
         <DropdownItem>Lista</DropdownItem>
