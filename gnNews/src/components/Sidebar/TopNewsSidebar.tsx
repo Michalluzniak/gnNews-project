@@ -13,7 +13,7 @@ const CoutriesSidebar = () => {
   }, []);
 
   return (
-    <div className="sidebar d-flex flex-column align-items-center bg-white w-20   ms-3">
+    <div className="sidebar d-flex flex-column align-items-center bg-dark w-20 ms-3 rounded">
       <div className="d-flex  justify-content-center align-item-center py-3 pb-2">
         <p className="fs-5 m-0 ">Today Global News</p>
       </div>
