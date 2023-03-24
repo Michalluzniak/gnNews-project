@@ -1,4 +1,6 @@
 import Header from '../Header';
+import CoutriesSidebar from '../Sidebar/CoutriesSidebar';
+import TopNewsSidebar from '../Sidebar/TopNewsSidebar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -6,10 +8,14 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="h-100 w-100 d-flex flex-column align-items-between ">
+    <div className="d-flex flex-column w-100 h-100">
       <Header></Header>
-      <main className="d-flex flex-grow-1 bg-primary ">{children}</main>
-      <footer className=" d-flex flex-shrink-1 bg-danger">
+      <div className="d-flex overflow-hidden w-100 align-self-center">
+        <TopNewsSidebar></TopNewsSidebar>
+        <main className="d-flex flex-grow-1 flex-column">{children}</main>
+        <CoutriesSidebar></CoutriesSidebar>
+      </div>
+      <footer className="d-flex flex-shrink-1 w-100 bg-dark mt-3">
         <div className="container-fluid">
           <div className="row">
             <div className="col"></div>

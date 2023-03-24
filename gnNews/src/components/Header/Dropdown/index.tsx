@@ -15,10 +15,12 @@ const Dropdown = () => {
       direction={dropdownOpen ? 'up' : 'down'}
       className="ms-5"
     >
-      <DropdownToggle caret>Widok</DropdownToggle>
+      <DropdownToggle caret color="light">
+        Display as
+      </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem>Lista</DropdownItem>
-        <DropdownItem>Kafelki</DropdownItem>
+        <DropdownItem>List</DropdownItem>
+        <DropdownItem>Tiles</DropdownItem>
       </DropdownMenu>
     </RSDropdown>
   );

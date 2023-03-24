@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Argentina",
+    "iso2": "AR",
+    "emoji": "🇦🇷"
+  },
+  {
+    "id": 2,
+    "name": "Australia",
+    "iso2": "AU",
+    "emoji": "🇦🇺"
+  },
+  {
+    "id": 3,
+    "name": "Austria",
+    "iso2": "AT",
+    "emoji": "🇦🇹"
+  },
+  {
+    "id": 4,
+    "name": "Belgium",
+    "iso2": "BE",
+    "emoji": "🇧🇪"
+  },
+  {
+    "id": 5,
+    "name": "Brazil",
+    "iso2": "BR",
+    "emoji": "🇧🇷"
+  },
+  {
+    "id": 6,
+    "name": "Bulgaria",
+    "iso2": "BG",
+    "emoji": "🇧🇬"
+  },
+  {
+    "id": 7,
+    "name": "Canada",
+    "iso2": "CA",
+    "emoji": "🇨🇦"
+  },
+  {
+    "id": 8,
+    "name": "China",
+    "iso2": "CN",
+    "emoji": "🇨🇳"
+  },
+  {
+    "id": 9,
+    "name": "Colombia",
+    "iso2": "CO",
+    "emoji": "🇨🇴"
+  },
+  {
+    "id": 10,
+    "name": "Czech Republic",
+    "iso2": "CZ",
+    "emoji": "🇨🇿"
+  },
+  {
+    "id": 11,
+    "name": "France",
+    "iso2": "FR",
+    "emoji": "🇫🇷"
+  },
+  {
+    "id": 12,
+    "name": "Germany",
+    "iso2": "DE",
+    "emoji": "🇩🇪"
+  },
+  {
+    "id": 13,
+    "name": "Italy",
+    "iso2": "IT",
+    "emoji": "🇮🇹"
+  },
+  {
+    "id": 14,
+    "name": "India",
+    "iso2": "IN",
+    "emoji": "🇮🇳"
+  },
+  {
+    "id": 15,
+    "name": "Norway",
+    "iso2": "NO",
+    "emoji": "🇳🇴"
+  },
+  {
+    "id": 16,
+    "name": "Poland",
+    "iso2": "PL",
+    "emoji": "🇵🇱"
+  },
+  {
+    "id": 11,
+    "name": "Japan",
+    "iso2": "JP",
+    "emoji": "🇯🇵"
+  },
+  {
+    "id": 17,
+    "name": "Mexico",
+    "iso2": "MX",
+    "emoji": "🇲🇽"
+  },
+  {
+    "id": 18,
+    "name": "Portugal",
+    "iso2": "PT",
+    "emoji": "🇵🇹"
+  },
+  {
+    "id": 19,
+    "name": "United States",
+    "iso2": "US",
+    "emoji": "🇺🇸"
+  },
+  {
+    "id": 20,
+    "name": "United Kingdom",
+    "iso2": "GB",
+    "emoji": "🇬🇧"
+  },
+  {
+    "id": 21,
+    "name": "Ukraine",
+    "iso2": "UA",
+    "emoji": "🇺🇦"
+  },
+  {
+    "id": 22,
+    "name": "Singapore",
+    "iso2": "SG",
+    "emoji": "🇸🇬"
+  },
+  {
+    "id": 23,
+    "name": "South Korea",
+    "iso2": "KR",
+    "emoji": "🇰🇷"
+  }
+]

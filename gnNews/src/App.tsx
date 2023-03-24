@@ -1,12 +1,16 @@
-import Layout from './components/Layout';
-// import Header from './components/Header';
 import './app.css';
+import Layout from './components/Layout';
+import Searchbar from './components/Header/Searchbar';
 
 function App() {
   return (
     <div className="app">
       <Layout>
         {/* HEADER */}
+        <div>
+          <Searchbar></Searchbar>
+        </div>
+        <div className="news flex-grow-1  mx-3"></div>
 
         {/* SIDEBAR */}
         {/* MAIN */}
