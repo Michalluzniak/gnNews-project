@@ -1,24 +1,12 @@
 // custom styles
 
-$light: #e6ecf0;
-$primary: #6689a1;
+$light: #3d3d3d;
 
-.w-2 {
-  width: 2%;
-}
+$primary: #fafafa;
 
-.w-10 {
-  width: 10%;
-}
+$secondary: #d9d9d9;
 
-.w-45 {
-  width: 45%;
-}
-
-.transition-300 {
-  -webkit-transition: width 1s;
-  transition: all 0.3s linear;
-}
+$success: #dae936;
 
 // bootstrap default styles
 @import './node_modules/bootstrap/scss/bootstrap';
@@ -31,12 +19,6 @@ $primary: #6689a1;
 @import '../../node_modules/bootstrap/scss/variables';
 @import './node_modules/bootstrap/scss/mixins';
 
-.hover-dark:hover {
-  background-color: $dark !important;
-  color: white;
-  cursor: pointer;
-}
-
 // 4. Include any optional Bootstrap components as you like
 @import './node_modules/bootstrap/scss/root';
 @import './node_modules/bootstrap/scss/reboot';
@@ -46,3 +28,74 @@ $primary: #6689a1;
 @import './node_modules/bootstrap/scss/grid';
 
 // 5. Add additional custom code here
+
+.sidebar-list::-webkit-scrollbar {
+  width: 8px; /* width of the entire scrollbar */
+}
+
+.sidebar-list::-webkit-scrollbar-track {
+  background: $dark; /* color of the tracking area */
+}
+
+.sidebar-list::-webkit-scrollbar-thumb {
+  background-color: #999; /* color of the scroll thumb */
+  border-radius: 25px; /* roundness of the scroll thumb */
+  border: 2px solid $dark;
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.hover-secondary:hover {
+  background-color: $secondary !important;
+}
+
+.w-2 {
+  width: 2%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.delay-300 {
+  transition-delay: 0.3s;
+}
+
+.top-90 {
+  top: 90% !important;
+}
+
+.rounded-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.square-button {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.hover-block:hover {
+  display: block !important;
+}

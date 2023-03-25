@@ -1,49 +1,52 @@
 import { useState } from 'react';
-import countryList from '../../mocks/countryList.json';
+import { CollapseButton } from './CollapseButton';
+import { CountryList } from './CountryList';
+import { NewsFrom } from './NewsFrom';
 
 const CoutriesSidebar = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
-  const isHoveredHandler = () => {
-    setIsHovered((prev) => !prev);
+  const isHoveredHandler = (value: boolean) => {
+    setIsHovered(value);
   };
 
   const isOpenHandler = () => {
     setIsOpen((prev) => !prev);
-    setIsHovered((prev) => !prev);
+    isOpen ? setIsHovered(false) : setIsHovered(true);
   };
 
   return (
     <aside
-      className={` align-items-center bg-dark transition-300  `}
-      style={isOpen ? { width: '200px' } : { width: '10px' }}
-      onClick={isOpenHandler}
+      className={` align-items-center bg-dark transition-all  position-relative`}
+      style={isOpen ? { width: '200px' } : { width: '20px' }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={` sticky-top start-0 bg-dark h-100 transition-300  overflow-hidden `}
-        style={isHovered || isOpen ? { width: '200px' } : { width: '10px' }}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
+        className={`sticky-top bg-dark h-100 transition-all  overflow-hidden`}
+        style={
+          isOpen ? { width: '200px' } : isHovered ? { width: '200px', transitionDelay: '300ms' } : { width: '20px' }
+        }
       >
-        {/* <div className="d-flex justify-content-center align-item-center py-3 pb-2 ">
-        <p className="fs-5 m-0 text-white">News From</p>
-      </div> */}
-        <div className={`text-center  bg-dark  px-3  h-100 overflow-scroll w-100`} style={{ width: '140px' }}>
-          <div>
-            <ul className="d-flex flex-column  list-unstyled " style={{ width: '140px' }}>
-              {countryList.map((country: any) => {
-                return (
-                  <li className={`d-flex mb-2 py-3 text-white  hover-dark`}>
-                    <div className=" w-25">{country.emoji}</div>
-                    <div className="text-start w-75 ">{country.name}</div>
-                  </li>
-                );
-              })}
-            </ul>
+        <div
+          className={`text-center h-100 w-100 transition-all   ${
+            isOpen ? 'opacity-1 ' : !isHovered ? 'opacity-0' : 'opacity-1 delay-300'
+          } `}
+        >
+          <div className="d-flex flex-column overflow-hidden h-100" style={{ width: '200px' }}>
+            <NewsFrom />
+            <CountryList />
           </div>
         </div>
       </div>
+
+      <CollapseButton
+        isOpen={isOpen}
+        isHovered={isHovered}
+        isOpenHandler={isOpenHandler}
+        isHoveredHandler={isHoveredHandler}
+      />
     </aside>
   );
 };
