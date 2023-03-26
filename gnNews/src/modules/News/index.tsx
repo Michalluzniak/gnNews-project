@@ -10,7 +10,7 @@ const News = () => {
   }, []);
 
   return (
-    <div>
+    <div className="">
       <NewsList data={newsList}></NewsList>
     </div>
   );

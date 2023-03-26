@@ -8,7 +8,7 @@ function App() {
       <Layout>
         {/* HEADER */}
         {/* <div className="d-flex overflow-hidden position-relative"> */}
-        <div className="news flex-grow-1 overflow-scroll h-100 bg-white ">
+        <div className="news flex-grow-1 border-secondary border overflow-scroll  h-100 bg-white ">
           <News></News>
         </div>
 

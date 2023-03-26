@@ -7,10 +7,9 @@ export const CollapseButton = ({ isOpen, isHovered, isOpenHandler, isHoveredHand
         !isHovered && isOpen && 'd-none'
       }`}
       onClick={isOpenHandler}
-      onMouseEnter={() => isHoveredHandler(isOpen && isHovered)}
-      //   onMouseLeave={() => isHoveredHandler(true)}
+      onMouseEnter={() => isHoveredHandler(!(!isOpen && !isHovered))}
     >
-      <MdKeyboardArrowLeft className={`fs-3 ${!isOpen && 'rotate-180'}`} />
+      <MdKeyboardArrowLeft className={`fs-3  ${!isOpen && 'rotate-180'}`} />
     </div>
   );
 };

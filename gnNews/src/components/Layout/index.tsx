@@ -12,9 +12,7 @@ const Layout = ({ children }: LayoutProps) => {
       <div className="d-flex flex-column flex-grow-1 ">
         <Header></Header>
 
-        <main className="d-flex flex-grow-1  flex-column overflow-hidden border m-3   border-secondary">
-          {children}
-        </main>
+        <main className="d-flex flex-grow-1  flex-column overflow-hidden m-3 mx-4">{children}</main>
       </div>
     </div>
   );
