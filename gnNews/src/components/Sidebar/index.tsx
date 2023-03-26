@@ -3,7 +3,7 @@ import { CollapseButton } from './CollapseButton';
 import { CountryList } from './CountryList';
 import { NewsFrom } from './NewsFrom';
 
-const CoutriesSidebar = () => {
+const Sidebar = () => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
@@ -50,4 +50,4 @@ const CoutriesSidebar = () => {
   );
 };
 
-export default CoutriesSidebar;
+export default Sidebar;

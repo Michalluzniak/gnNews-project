@@ -12,8 +12,6 @@ export const useNewsList = () => {
   const pageSize = 10;
   const numberOfPages = newsList && newsList.totalResults / pageSize;
 
-  console.log(numberOfPages);
-
   useEffect(() => {
     //
     const getNews = async () => {

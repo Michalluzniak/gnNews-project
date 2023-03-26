@@ -1,5 +1,5 @@
 import Header from '../Header';
-import CoutriesSidebar from '../Sidebar/CoutriesSidebar';
+import Sidebar from '../Sidebar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className="d-flex flex-row w-100 h-100 bg-primary">
-      <CoutriesSidebar />
+      <Sidebar />
       <div className="d-flex flex-column flex-grow-1 ">
         <Header></Header>
 

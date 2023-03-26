@@ -1,7 +1,7 @@
 import { SingleElement } from './SingleElement';
 
 const NewsList = ({ data }: any) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <ul className="list-unstyled p-3">

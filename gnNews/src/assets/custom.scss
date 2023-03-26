@@ -2,11 +2,11 @@
 
 $light: #3d3d3d;
 
-$primary: #fafafa;
-
-$info: #34339c;
+$primary: #eee;
 
 $secondary: #d9d9d9;
+
+$info: #34339c;
 
 $success: #dae936;
 
@@ -51,6 +51,14 @@ $success: #dae936;
 
 .hover-secondary:hover {
   background-color: $secondary !important;
+}
+
+.hover-primary:hover {
+  background-color: $primary !important;
+}
+
+.hover-light:hover {
+  background-color: $light;
 }
 
 .w-2 {
@@ -99,10 +107,6 @@ $success: #dae936;
 
 .rotate-180 {
   transform: rotate(180deg);
-}
-
-.hover-block:hover {
-  display: block !important;
 }
 
 .outline-none {
