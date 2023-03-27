@@ -18,13 +18,13 @@ const Sidebar = () => {
 
   return (
     <aside
-      className={` align-items-center bg-dark  transition-all duration-300 `}
+      className={` align-items-center bg-dark  transition-all duration-300 shadow-lg`}
       style={isOpen ? { width: '200px' } : { width: '20px' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`sticky-top bg-dark h-100 transition-all duration-300   position-relative`}
+        className={`sticky-top bg-dark h-100 transition-all duration-300  position-relative`}
         style={
           isOpen ? { width: '200px' } : isHovered ? { width: '200px', transitionDelay: '300ms' } : { width: '20px' }
         }

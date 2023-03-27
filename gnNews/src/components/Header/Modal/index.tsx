@@ -11,7 +11,7 @@ const Popup = () => {
 
   return (
     <div>
-      <Button color="danger" onClick={modalToggleHandler}>
+      <Button className="px-3 py-2 shadow-sm" color="danger" onClick={modalToggleHandler}>
         Click Me
       </Button>
       <Modal isOpen={modalOpen} toggle={modalToggleHandler}>

@@ -1,28 +1,26 @@
-import { useState } from 'react';
-import { Dropdown as RSDropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap';
+import { Form, FormGroup, Input, Label } from 'reactstrap';
+import { useAppDispatch } from '../../../hooks/reduxTypes';
+import { changeNewsDisplay, DisplayOptions } from '../../../slices/newsDisplay';
 
 const Dropdown = () => {
-  const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
-
-  const dropdownToggleHandler = () => {
-    setDropdownOpen((prev) => !prev);
-  };
+  const dispatch = useAppDispatch();
 
   return (
-    <RSDropdown
-      isOpen={dropdownOpen}
-      toggle={dropdownToggleHandler}
-      direction={dropdownOpen ? 'up' : 'down'}
-      className="ms-5"
-    >
-      <DropdownToggle caret color="light">
-        Display as
-      </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem>List</DropdownItem>
-        <DropdownItem>Tiles</DropdownItem>
-      </DropdownMenu>
-    </RSDropdown>
+    <Form className="w-50">
+      <FormGroup className="form-group d-flex justify-content-end align-items-center">
+        <Label for="exampleEmail">Display as:</Label>
+        <Input
+          className="ms-2 border border-secondary py-2 ps-1 w-50 me-3 shadow-sm"
+          id="exampleSelect"
+          name="select"
+          type="select"
+          onChange={(event) => dispatch(changeNewsDisplay(event.target.value as DisplayOptions))}
+        >
+          <option>List</option>
+          <option>Tiles</option>
+        </Input>
+      </FormGroup>
+    </Form>
   );
 };
 

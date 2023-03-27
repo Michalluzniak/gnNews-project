@@ -73,8 +73,24 @@ $success: #dae936;
   width: 20%;
 }
 
+.w-30 {
+  width: 30%;
+}
+
 .w-45 {
   width: 45%;
+}
+
+.h-45 {
+  height: 45%;
+}
+
+.basis-32 {
+  flex-basis: 32%;
+}
+
+.text-sm {
+  font-size: 14px;
 }
 
 .transition-all {
@@ -115,4 +131,8 @@ $success: #dae936;
 
 .news {
   overflow-x: hidden !important;
+}
+
+.form-group {
+  margin: 0 !important;
 }

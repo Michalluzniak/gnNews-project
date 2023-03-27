@@ -7,7 +7,8 @@ export const CountryList = () => {
       {countryList.map((country: any) => {
         return (
           <li
-            className={`d-flex align-items-center text-white py-3 ps-1 pe-3 cursor-pointer border-bottom border-light hover-light`}
+            key={country.id}
+            className={`d-flex align-items-center text-primary py-3 ps-1 pe-3 cursor-pointer border-bottom border-light hover-light text-sm`}
           >
             <div className=" w-25">{country.emoji}</div>
             <div className="text-start w-75 ">{country.name}</div>
