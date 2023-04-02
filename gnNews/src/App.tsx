@@ -1,22 +1,18 @@
+import { Navigate, Route, Routes } from 'react-router-dom';
 import './app.css';
 import Layout from './components/Layout';
-import News from './modules/News';
+import NotFound from './modules/NotFound';
 
 function App() {
   return (
     <div className="app">
-      <Layout>
-        {/* HEADER */}
-        {/* <div className="d-flex overflow-hidden position-relative"> */}
-        <div className="news  border-secondary border overflow-scroll bg-white">
-          <News></News>
-        </div>
+      <Routes>
+        <Route path="/" element={<Navigate to="/country/Poland" />} />
+        <Route path="/country/:id" element={<Layout />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
+      </Routes>
 
-        {/* SIDEBAR */}
-        {/* MAIN */}
-        {/* FOOTER */}
-        {/* </div> */}
-      </Layout>
+      {/* FOOTER */}
     </div>
   );
 }

@@ -11,7 +11,8 @@ interface GetCountryNewsProps {
 export const getCountryNews = ({ query, country, page, pageSize, controller }: GetCountryNewsProps) => {
   return apiCall('GET', 'https://newsapi.org/v2/top-headlines', {
     params: {
-      apiKey: process.env.REACT_APP_NEWS_API_KEY,
+      apiKey: '1c91dda609754965a265e4b4cd39b4a3',
+      //  process.env.REACT_APP_NEWS_API_KEY,
       q: query,
       country,
       page,

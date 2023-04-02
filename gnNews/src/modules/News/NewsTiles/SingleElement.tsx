@@ -1,14 +1,13 @@
 import { Card, CardBody, CardImg, CardImgOverlay, CardText, CardTitle } from 'reactstrap';
 
-export const SingleElement = ({ data }: any) => {
+export const SingleElement = ({ data, modalHandler }: any) => {
   const cardImage = data.urlToImage
     ? data.urlToImage
     : 'https://images.unsplash.com/photo-1478940020726-e9e191651f1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80';
 
   return (
-    <div className={`d-flex flex-wrap basis-32 m-2 shadow rounded overflow-hidden `}>
-      <Card className="w-100 h-100">
-        {/* <img alt="Sample" src={data.urlToImage} className="rounded-top w-100" style={{ filter: ' brightness(60%)' }} /> */}
+    <div className={`d-flex flex-wrap basis-32 m-2 shadow rounded overflow-hidden cursor-pointer `}>
+      <Card className="w-100 h-100" onClick={() => modalHandler(data)}>
         <CardImg
           alt="Card image cap"
           src={cardImage}
@@ -18,6 +17,7 @@ export const SingleElement = ({ data }: any) => {
             objectFit: 'cover',
             width: '100%',
           }}
+          className="rounded-0 rounded-top"
         />
         <CardImgOverlay>
           <CardTitle className="p-3 text-white" tag="h4">
