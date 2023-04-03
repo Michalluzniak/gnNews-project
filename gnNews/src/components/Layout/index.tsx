@@ -2,10 +2,6 @@ import News from '../../modules/News';
 import Header from '../Header';
 import Sidebar from '../Sidebar';
 
-interface LayoutProps {
-  children: React.ReactNode | any;
-}
-
 const Layout = () => {
   return (
     <div className="d-flex flex-row w-100 h-100 bg-primary">

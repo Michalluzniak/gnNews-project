@@ -5,7 +5,7 @@ import countryList from '../../mocks/countryList.json';
 export const CountryList = () => {
   return (
     <ul className="sidebar-list d-flex flex-column list-unstyled  overflow-auto">
-      {countryList.map((country: any) => {
+      {countryList.map((country) => {
         return (
           <Link key={country.id} to={`/country/${country.name}`} className="text-decoration-none">
             <li

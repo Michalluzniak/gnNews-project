@@ -10,7 +10,7 @@ const News = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [dataForModal, setDataForModal] = useState<{} | null>(null);
 
-  const observer = useRef<any>();
+  const observer = useRef<>();
 
   const lastElementRef = useCallback(
     (node: any) => {
