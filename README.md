@@ -1,4 +1,4 @@
-# GNNEWS
+# GnNews
 News app for many countries around the world
 
 ## Technologies 
