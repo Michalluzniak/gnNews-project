@@ -1,12 +1,13 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { useAppSelector } from '../../hooks/reduxTypes';
+import Error from './Error';
 import { useNewsList } from './hooks/useNewsList';
 import NewsList from './NewsList';
 import NewsModal from './NewsModal';
 import NewsTiles from './NewsTiles';
 
 const News = () => {
-  const [newsList, numberOfPages, page, setPage, isLoading, isError] = useNewsList();
+  const [newsList, numberOfPages, page, setPage, isLoading, isError, errorMsg] = useNewsList();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [dataForModal, setDataForModal] = useState<{} | null>(null);
 
@@ -36,11 +37,16 @@ const News = () => {
 
   return (
     <div>
-      {newsDisplayOption === 'List' ? (
-        <NewsList data={newsList} modalHandler={modalHandler} lastElementRef={lastElementRef} />
+      {!isError ? (
+        newsDisplayOption === 'List' ? (
+          <NewsList data={newsList} modalHandler={modalHandler} lastElementRef={lastElementRef} />
+        ) : (
+          <NewsTiles data={newsList} modalHandler={modalHandler} lastElementRef={lastElementRef} />
+        )
       ) : (
-        <NewsTiles data={newsList} modalHandler={modalHandler} lastElementRef={lastElementRef} />
+        <Error>{errorMsg}</Error>
       )}
+
       {dataForModal && <NewsModal isModalOpen={isModalOpen} modalToggleHandler={modalHandler} data={dataForModal} />}
       {isLoading && 'Loading...'}
     </div>

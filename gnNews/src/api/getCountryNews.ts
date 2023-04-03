@@ -12,7 +12,8 @@ export const getCountryNews = ({ query, countryIso, page, pageSize, controller }
   console.log(countryIso);
   return apiCall('GET', 'https://newsapi.org/v2/top-headlines', {
     params: {
-      apiKey: process.env.REACT_APP_NEWS_API_KEY,
+      apiKey: '1c91dda609754965a265e4b4cd39b4a3',
+      // process.env.REACT_APP_NEWS_API_KEY,
       // '1c91dda609754965a265e4b4cd39b4a3',
       q: query,
       country: countryIso,

@@ -13,6 +13,7 @@ export const useNewsList = () => {
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isError, setIsError] = useState<boolean>(false);
+  const [errorMsg, setErrorMsg] = useState<string>('');
 
   const [page, setPage] = useState(1);
 
@@ -28,8 +29,8 @@ export const useNewsList = () => {
   }, [country]);
 
   useEffect(() => {
-    const countryIso = getCountryFromUrl(country!)[0].iso2;
-    setCountryIso(countryIso);
+    const countryIsoFromUrl = getCountryFromUrl(country!)[0].iso2;
+    setCountryIso(countryIsoFromUrl);
     //
     const controller = new AbortController();
 
@@ -49,10 +50,12 @@ export const useNewsList = () => {
           //
         });
         setIsLoading(false);
-      } catch (error) {
+      } catch (error: any) {
         //
         if (axios.isCancel(error)) console.log('error from abort');
         setIsError(true);
+        setErrorMsg(error.response.data.message);
+        console.log(error);
         console.log(error);
       }
     };
@@ -61,5 +64,5 @@ export const useNewsList = () => {
     return () => controller.abort();
   }, [page, query, country]);
 
-  return [newsList, numberOfPages, page, setPage, isLoading, isError];
+  return [newsList, numberOfPages, page, setPage, isLoading, isError, errorMsg];
 };

@@ -10,7 +10,7 @@ const Layout = () => {
         <Header></Header>
 
         <main className="d-flex flex-grow-1 flex-column overflow-hidden m-3 mx-4">
-          <div className="news  border-secondary border overflow-scroll bg-white">
+          <div className="news position-relative border-secondary border overflow-scroll bg-white flex-grow-1">
             <News></News>
           </div>
         </main>
