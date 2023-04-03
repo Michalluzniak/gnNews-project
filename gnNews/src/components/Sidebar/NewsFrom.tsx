@@ -16,7 +16,6 @@ export const NewsFrom = () => {
 
   useEffect(() => {
     setFilteredCountry(getCountryFromUrl(country!)[0]);
-    console.log(filteredCountry);
   }, [country, filteredCountry]);
 
   return (

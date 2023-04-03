@@ -9,6 +9,7 @@ interface GetCountryNewsProps {
 }
 
 export const getCountryNews = ({ query, countryIso, page, pageSize, controller }: GetCountryNewsProps) => {
+  console.log(countryIso);
   return apiCall('GET', 'https://newsapi.org/v2/top-headlines', {
     params: {
       apiKey: process.env.REACT_APP_NEWS_API_KEY,

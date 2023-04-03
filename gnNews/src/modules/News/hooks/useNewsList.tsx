@@ -23,12 +23,13 @@ export const useNewsList = () => {
   const query = useAppSelector((state) => state.inputValueSlice.value);
 
   useEffect(() => {
-    const countryIso = getCountryFromUrl(country!)[0].iso2;
-    setCountryIso(countryIso);
     setNewsList([]);
+    setPage(1);
   }, [country]);
 
   useEffect(() => {
+    const countryIso = getCountryFromUrl(country!)[0].iso2;
+    setCountryIso(countryIso);
     //
     const controller = new AbortController();
 
@@ -41,6 +42,7 @@ export const useNewsList = () => {
         const response: any = await getCountryNews({ query, countryIso, page, pageSize, controller });
 
         setNewsListTotalResults(response.totalResults);
+        console.log(response);
 
         setNewsList((prev: any) => {
           return [...prev, ...response.articles];
@@ -56,7 +58,7 @@ export const useNewsList = () => {
     };
     getNews();
 
-    return () => controller.abort();
+    // return () => controller.abort();
   }, [page, countryIso, numberOfPages, query, country]);
 
   return [newsList, numberOfPages, page, setPage, isLoading, isError, setCountryIso];

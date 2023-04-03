@@ -18,12 +18,10 @@ const News = () => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && numberOfPages >= page) {
-          console.log('lalal');
           setPage((prev: number) => prev + 1);
         }
       });
       if (node) observer.current.observe(node);
-      console.log(node);
     },
     [isLoading, setPage, page, numberOfPages]
   );
@@ -47,6 +45,7 @@ const News = () => {
         <NewsTiles data={newsList} modalHandler={modalHandler} lastElementRef={lastElementRef} />
       )}
       {dataForModal && <NewsModal isModalOpen={isModalOpen} modalToggleHandler={modalHandler} data={dataForModal} />}
+      {isLoading && 'Loading...'}
     </div>
   );
 };
