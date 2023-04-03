@@ -61,5 +61,5 @@ export const useNewsList = () => {
     // return () => controller.abort();
   }, [page, countryIso, numberOfPages, query, country]);
 
-  return [newsList, numberOfPages, page, setPage, isLoading, isError, setCountryIso];
+  return [newsList, numberOfPages, page, setPage, isLoading, isError];
 };

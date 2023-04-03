@@ -6,18 +6,19 @@ import NewsModal from './NewsModal';
 import NewsTiles from './NewsTiles';
 
 const News = () => {
-  const [newsList, numberOfPages, page, setPage, isLoading, isError, setCountryIso] = useNewsList();
+  const [newsList, numberOfPages, page, setPage, isLoading, isError] = useNewsList();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [dataForModal, setDataForModal] = useState<{} | null>(null);
 
-  const observer = useRef<>();
+  const observer = useRef<IntersectionObserver>();
 
   const lastElementRef = useCallback(
-    (node: any) => {
+    (node: HTMLElement) => {
       if (isLoading) return;
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && numberOfPages >= page) {
+          console.log('visible');
           setPage((prev: number) => prev + 1);
         }
       });
@@ -32,10 +33,6 @@ const News = () => {
   };
 
   const newsDisplayOption = useAppSelector((state) => state.newsDisplay.value);
-
-  useEffect(() => {
-    setCountryIso('us');
-  }, [setCountryIso]);
 
   return (
     <div>
