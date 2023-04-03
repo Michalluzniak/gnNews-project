@@ -6,7 +6,7 @@ import NewsModal from './NewsModal';
 import NewsTiles from './NewsTiles';
 
 const News = () => {
-  const [newsList, isLoading, isError, setCountry] = useNewsList();
+  const [newsList, isLoading, isError, setCountryIso] = useNewsList();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [dataForModal, setDataForModal] = useState<{} | null>(null);
 
@@ -18,10 +18,8 @@ const News = () => {
   const newsDisplayOption = useAppSelector((state) => state.newsDisplay.value);
 
   useEffect(() => {
-    setCountry('us');
-  }, [setCountry]);
-
-  console.log(newsList);
+    setCountryIso('us');
+  }, [setCountryIso]);
 
   return (
     <div>

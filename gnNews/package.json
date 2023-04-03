@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "homepage": "https:/Michalluzniak/.github.io/gnNews-project",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -48,6 +49,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^14.0.0",
+    "gh-pages": "^5.0.0",
     "sass": "^1.59.3"
   }
 }

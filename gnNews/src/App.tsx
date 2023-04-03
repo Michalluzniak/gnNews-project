@@ -8,7 +8,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Navigate to="/country/Poland" />} />
-        <Route path="/country/:id" element={<Layout />}></Route>
+        <Route path="/country/:country" element={<Layout />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
 

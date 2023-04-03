@@ -7,9 +7,8 @@ export const CountryList = () => {
     <ul className="sidebar-list d-flex flex-column list-unstyled  overflow-auto">
       {countryList.map((country: any) => {
         return (
-          <Link to={`/country/${country.name}`} className="text-decoration-none">
+          <Link key={country.id} to={`/country/${country.name}`} className="text-decoration-none">
             <li
-              key={country.id}
               className={`d-flex align-items-center text-primary py-3 ps-1 pe-3 cursor-pointer border-bottom border-light hover-light text-sm`}
             >
               <div className=" w-25">{country.emoji}</div>

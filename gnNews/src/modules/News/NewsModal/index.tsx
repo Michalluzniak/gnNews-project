@@ -1,4 +1,4 @@
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
+import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 
 const NewsModal = ({ isModalOpen, modalToggleHandler, data }: any) => {
   return (
@@ -11,16 +11,16 @@ const NewsModal = ({ isModalOpen, modalToggleHandler, data }: any) => {
         anim id est laborum."
       </ModalBody>
       <ModalFooter>
-        <div className="py-2 px-5">
+        <div className="py-2 px-5 w-100">
           <p>Author: {data.author}</p>
           <p>
-            Source:{' '}
-            <a href={data.url} className="text-dark">
-              {data.url}
+            Source:
+            <a href={data.url} className="text-dark ms-1">
+              Go to the website
             </a>
           </p>
         </div>
-        <Button color="success m-2 mx-3 px-3 py-1" size="lg" onClick={modalToggleHandler}>
+        <Button color="success my-3 mx-3 px-3 py-1" size="lg" onClick={modalToggleHandler}>
           Close
         </Button>
       </ModalFooter>
