@@ -1,4 +1,12 @@
 import countryList from '../mocks/countryList.json';
-export const getCountryFromUrl = (country: string): any => {
+
+interface GetCountryFromUrl {
+  id: number;
+  name: string;
+  iso2: string;
+  emoji: string;
+}
+
+export const getCountryFromUrl = (country: string): GetCountryFromUrl[] => {
   return countryList.filter((item) => item.name === country && item.iso2);
 };

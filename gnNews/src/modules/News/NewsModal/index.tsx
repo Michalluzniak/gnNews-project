@@ -1,6 +1,13 @@
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
+import { NewsListElements } from '../NewsList';
 
-const NewsModal = ({ isModalOpen, modalToggleHandler, data }: any) => {
+interface NewsModalProps {
+  isModalOpen: boolean;
+  modalToggleHandler: () => void;
+  data: NewsListElements;
+}
+
+const NewsModal = ({ isModalOpen, modalToggleHandler, data }: NewsModalProps) => {
   return (
     <Modal className="m-auto" size="lg" centered isOpen={isModalOpen} toggle={modalToggleHandler}>
       <ModalBody className="p-5 lh-lg fs-5">

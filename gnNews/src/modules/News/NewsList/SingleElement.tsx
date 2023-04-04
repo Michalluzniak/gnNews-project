@@ -1,4 +1,12 @@
-export const SingleElement = ({ data, modalHandler, lastElementRef }: any) => {
+import { LegacyRef } from 'react';
+import { NewsListElements } from '.';
+
+export interface SingleElementProps {
+  data: NewsListElements;
+  modalHandler: (item: NewsListElements) => void;
+  lastElementRef?: LegacyRef<HTMLLIElement>;
+}
+export const SingleElement = ({ data, modalHandler, lastElementRef }: SingleElementProps) => {
   return (
     <li
       className="border-bottom pt-2 pb-2 hover-primary cursor-pointer"

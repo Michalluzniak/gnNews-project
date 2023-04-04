@@ -6,15 +6,29 @@ import NewsList from './NewsList';
 import NewsModal from './NewsModal';
 import NewsTiles from './NewsTiles';
 
+export interface NewsListElements {
+  author: string;
+  content: string | null;
+  description: string | null;
+  publishedAt: string;
+  source: {
+    id: string | null;
+    name: string;
+  };
+  title: string;
+  url: string;
+  urlToImage: string | null;
+}
+
 const News = () => {
   const [newsList, numberOfPages, page, setPage, isLoading, isError, errorMsg] = useNewsList();
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [dataForModal, setDataForModal] = useState<{} | null>(null);
+  const [dataForModal, setDataForModal] = useState<NewsListElements>();
 
   const observer = useRef<IntersectionObserver>();
 
   const lastElementRef = useCallback(
-    (node: HTMLElement) => {
+    (node: HTMLLIElement & HTMLDivElement) => {
       if (isLoading) return;
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
@@ -28,9 +42,9 @@ const News = () => {
     [isLoading, setPage, page, numberOfPages]
   );
 
-  const modalHandler = (singleNewsData: {}) => {
+  const modalHandler = (singleNewsData?: NewsListElements) => {
     setIsModalOpen((prev) => !prev);
-    setDataForModal(singleNewsData);
+    singleNewsData && setDataForModal(singleNewsData);
   };
 
   const newsDisplayOption = useAppSelector((state) => state.newsDisplay.value);
